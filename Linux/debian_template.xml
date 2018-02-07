@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>3.4</version>
+    <date>2018-02-06T22:22:22Z</date>
+    <groups>
+        <group>
+            <name>Templates/Operating Systems</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template OS Debian</template>
+            <name>Template OS Debian</name>
+            <description>Debian (or Debian based distribution) specific</description>
+            <groups>
+                <group>
+                    <name>Templates/Operating Systems</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>OS</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Reboot required</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>system.rebootrequired</key>
+                    <delay>15m</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>OS</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>0=No; 1=Yes</name>
+                    </valuemap>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+            </items>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{Template OS Debian:system.rebootrequired.last()}&gt;0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Reboot required on {HOST.HOST}</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>1</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+    </triggers>
+    <value_maps>
+        <value_map>
+            <name>0=No; 1=Yes</name>
+            <mappings>
+                <mapping>
+                    <value>0</value>
+                    <newvalue>No</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>Yes</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>
