@@ -28,7 +28,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>system.rebootrequired</key>
+                    <key>vfs.file.exists[/var/run/reboot-required]</key>
                     <delay>15m</delay>
                     <history>7d</history>
                     <trends>365d</trends>
